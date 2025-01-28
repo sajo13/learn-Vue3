@@ -12,7 +12,7 @@ let showModal = ref(false);
 </script>
 
 <template>
-  <TeamHeader @add="showModal = true"/>
+  <TeamHeader/>
 
   <div class="place-self-center flex flex-col gap-y-3" style="width: 725px">
     <TeamMembers/>

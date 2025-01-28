@@ -1,5 +1,6 @@
 <script setup>
 import {useTeamStore} from "@/stores/TeamStore";
+import AddMemberModel from "@/components/Teams/AddMemberModel.vue";
 // Import your Pinia store
 
 // Use the Pinia store to access state
@@ -9,13 +10,7 @@ const teamStore = useTeamStore();
 <template>
   <header class="flex justify-between">
     <div>
-      <button
-        :disabled="teamStore.members.length === teamStore.spots"
-        class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded disabled:bg-gray-400"
-        @click="$emit('add')">
-        Add Member
-        ({{ teamStore.spotsRemaining }} Spots Left)
-      </button>
+      <AddMemberModel/>
     </div>
 
     <div>
