@@ -1,9 +1,10 @@
 <script setup>
 import TeamMember from "@/components/Teams/TeamMember.vue";
+import {useTeamStore} from "@/stores/TeamStore";
+// Import your Pinia store
 
-defineProps({
-  team: Object
-});
+// Use the Pinia store to access state
+const teamStore = useTeamStore();
 </script>
 
 <template>
@@ -15,11 +16,12 @@ defineProps({
     </thead>
 
     <tbody>
-    <TeamMember v-for="member in team.members" :email="member.email" :name="member.name"
+    <TeamMember v-for="member in teamStore.members" :email="member.email" :name="member.name"
                 :status="member.status"/>
     </tbody>
   </table>
 
-  <p v-show="team.members.length === team.spots" class="text-right text-gray-600 italic">There are
+  <p v-show="teamStore.members.length === teamStore.spots" class="text-right text-gray-600 italic">
+    There are
     no remaining team spots. Upgrade to add more.</p>
 </template>
