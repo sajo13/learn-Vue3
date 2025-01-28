@@ -22,12 +22,12 @@ let showModal = ref(false);
 
   <Modal :show="showModal" @close="showModal = false">
     <template #default>
-      <p>Need to add a new member to your team?</p>
-
+      <p class="text-black">Need to add a new member to your team?</p>
       <form class="mt-6">
         <div class="flex gap-2">
-          <input class="flex-1" placeholder="Email Address..." type="email">
-          <button>Add</button>
+          <input class="flex-1 text-black border-spacing-1" placeholder="Email Address..."
+                 type="email">
+          <button class="text-blue-500 border-spacing-1">Add</button>
         </div>
       </form>
     </template>
