@@ -1,19 +1,20 @@
-<script setup>
-// import {ref} from 'vue';
-import TheWelcome from '../components/TheWelcome.vue';
+<script>
+import {useFlash} from "@/composable/useFlash.js";
 
-// Use $ref shorthand for reactivity
-let message = $ref("Hello world");
+export default {
+  setup() {
+    let {flash} = useFlash();
 
-setTimeout(() => {
-  message = "I have been changed";  // Direct assignment, reactivity works
-}, 2000);
+    return {flash};
+  }
+}
 </script>
 
 <template>
   <main>
-    <TheWelcome/>
-    {{ message }} <!-- Directly using message without .value -->
-    <input v-model="message" type="text"/>
+    <p>
+      <button @click="flash('Yay!', 'it works', 'info')"> Click Me</button>
+    </p>
+
   </main>
 </template>

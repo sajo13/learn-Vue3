@@ -4,6 +4,7 @@
   },
   "devDependencies": {
     "@vue-macros/reactivity-transform": "^1.1.6",
-    "json-server": "^1.0.0-beta.3"
+    "json-server": "^1.0.0-beta.3",
+    "sweetalert": "^2.1.2"
   }
 }
