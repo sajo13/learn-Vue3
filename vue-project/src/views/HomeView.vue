@@ -1,20 +1,14 @@
-<script>
-import {useFlash} from "@/composable/useFlash.js";
+<script setup>
+import {useStorage} from "@/composable/useStorage.js";
 
-export default {
-  setup() {
-    let {flash} = useFlash();
+let food = useStorage('food', 'tacos');
 
-    return {flash};
-  }
-}
 </script>
 
 <template>
   <main>
     <p>
-      <button @click="flash('Yay!', 'it works', 'info')"> Click Me</button>
+      What is your favorite food? <input v-model="food" type="text">
     </p>
-
   </main>
 </template>
