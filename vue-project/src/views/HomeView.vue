@@ -1,9 +1,11 @@
 <template>
-  <div>
-    <h5>{{ state.name }}</h5>
-  </div>
+  <main>
+    <Quiz :quiz="{ name: 'My First Quiz', questions: [] }" />
+
+  </main>
 </template>
 
 <script setup>
-import {state} from "@/stores/quizStore";
+// import {state} from "@/stores/quizStore";
+import Quiz from "@/components/Quiz/Quiz.vue";
 </script>
